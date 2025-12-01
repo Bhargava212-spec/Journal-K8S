@@ -26,13 +26,12 @@ pipeline {
 
         stage('Build JAR') {
             steps {
-                script {
-                    dir('Journal') {
-                     bat 'dir /s'
-                     bat 'mvn -Dmaven.test.failure.ignore=false clean package'
-                   }
-                }
-            }
+                  script {
+                       echo "Building Spring Boot JAR..."
+                       bat 'mvn -version'
+                        bat 'mvn -Dmaven.test.failure.ignore=false clean package'
+                        }
+                  }
         }
 
         stage('Build Docker Image') {
