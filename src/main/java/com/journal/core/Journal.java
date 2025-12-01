@@ -20,7 +20,7 @@ public class Journal {
     @Column(name = "USER_NAME", nullable = false, updatable = false)
     private String username;
 
-    @Column(name = "USER_EVENT",length = 65535)
+    @Column(name = "USER_EVENT",columnDefinition = "LONGTEXT")
     private String event;
 
     @CreationTimestamp
